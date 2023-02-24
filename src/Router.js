@@ -10,7 +10,7 @@ import Payment from './pages/Payment/Payment';
 import Posting from './pages/Posting/Posting';
 import Detail from './pages/Detail/Detail';
 import Products from './pages/Products/Products';
-import Signin from './pages/Signin/Signin';
+import Signup from './pages/Signup/Signup';
 
 const Router = () => {
   return (
@@ -26,7 +26,7 @@ const Router = () => {
           <Route path="/collections" element={<Collections />} />
         </Route>
         <Route path="/login" element={<Login />} />
-        <Route path="/signin" element={<Signin />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/posting" element={<Posting />} />
       </Routes>
     </BrowserRouter>

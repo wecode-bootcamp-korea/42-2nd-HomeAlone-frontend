@@ -4,12 +4,12 @@ import Container from './components/Container/Container';
 import Cart from './pages/Cart/Cart';
 import Collections from './pages/Collections/Collections';
 import HomeWarming from './pages/HomeWarming/HomeWarming';
+import HomeWarmingList from './pages/HomeWarmingList/HomeWarmingList';
 import Login from './pages/Login/Login';
 import Main from './pages/Main/Main';
 import Payment from './pages/Payment/Payment';
 import Posting from './pages/Posting/Posting';
 import Detail from './pages/Detail/Detail';
-import Products from './pages/Products/Products';
 import Signup from './pages/Signup/Signup';
 
 const Router = () => {
@@ -18,7 +18,7 @@ const Router = () => {
       <Routes>
         <Route element={<Container />}>
           <Route path="/" element={<Main />} />
-          <Route path="/products" element={<Products />} />
+          <Route path="/home-warming-list" element={<HomeWarmingList />} />
           <Route path="/detail" element={<Detail />} />
           <Route path="/home-warming" element={<HomeWarming />} />
           <Route path="/cart" element={<Cart />} />

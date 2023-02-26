@@ -4,8 +4,11 @@ const GlobalStyle = createGlobalStyle`
     ${reset};
     * {
         box-sizing: border-box;
+
     }
     body{
         background-color: white;
-    }`;
+    }
+    `;
+
 export default GlobalStyle;

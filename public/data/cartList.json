@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "cartId": 1,
+      "productId": 1,
+      "imageUrl": "images/nav/bed.jpg",
+      "brand": "(주)우리집플러스 배송",
+      "name": "화이트 일체형 침대",
+      "price": "159900",
+      "discount": "56000",
+      "quantity": "1",
+      "shippingFee": "0",
+      "isSelected": false
+    },
+    {
+      "cartId": 2,
+      "productId": 2,
+      "imageUrl": "images/nav/table.jpg",
+      "brand": "(주)컬러베이지 배송",
+      "name": "나무 테이블",
+      "price": "209900",
+      "discount": "56000",
+      "quantity": "2",
+      "shippingFee": "3000",
+      "isSelected": false
+    },
+    {
+      "cartId": 3,
+      "productId": 3,
+      "imageUrl": "images/nav/sofa.jpg",
+      "brand": "(주)침대같은쇼파 배송",
+      "name": "1인용 쇼파",
+      "price": "489900",
+      "discount": "56000",
+      "quantity": "3",
+      "shippingFee": "3000",
+      "isSelected": false
+    },
+    {
+      "cartId": 4,
+      "productId": 4,
+      "imageUrl": "images/nav/lamp.jpg",
+      "brand": "(주)반짝반짝 배송",
+      "name": "플로어램프",
+      "price": "1119900",
+      "discount": "56000",
+      "quantity": "2",
+      "shippingFee": "3000",
+      "isSelected": false
+    }
+  ]
+}

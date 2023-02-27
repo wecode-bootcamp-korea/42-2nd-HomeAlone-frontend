@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "imageUrl": "images/main/modern1.jpg",
+    "title": "고요한 시간을 온전히 누리는 싱글라이프",
+    "roomStyle": "modern"
+  },
+  {
+    "id": 2,
+    "imageUrl": "images/main/modern2.jpg",
+    "title": "채광 맛집 원룸, 똑똑한 공간 분리로 아늑하게",
+    "roomStyle": "modern"
+  },
+  {
+    "id": 3,
+    "imageUrl": "images/main/vintage1.jpg",
+    "title": "맥시멀한 빈티지 스타일링",
+    "roomStyle": "vintage"
+  },
+  {
+    "id": 4,
+    "imageUrl": "images/main/vintage2.jpg",
+    "title": "구옥의 고즈넉함이 담긴 슬기로운 구옥살이",
+    "roomStyle": "vintage"
+  },
+  {
+    "id": 5,
+    "imageUrl": "images/main/lovely1.jpg",
+    "title": "다양한 패브릭이 모여있는 무지개 같은 내 방",
+    "roomStyle": "lovely"
+  },
+  {
+    "id": 6,
+    "imageUrl": "images/main/lovely2.jpg",
+    "title": "동화같은 러블리 자취집",
+    "roomStyle": "lovely"
+  },
+  {
+    "id": 7,
+    "imageUrl": "images/main/lovely1.jpg",
+    "title": "추가1",
+    "roomStyle": "lovely"
+  },
+  {
+    "id": 8,
+    "imageUrl": "images/main/lovely2.jpg",
+    "title": "추가2",
+    "roomStyle": "lovely"
+  }
+]

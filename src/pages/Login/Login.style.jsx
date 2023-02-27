@@ -59,6 +59,6 @@ export const Text = styled.p`
 `;
 
 export const LoginImg = styled.img`
-  width: 40px;
+  width: 170px;
   margin-top: 10px;
 `;

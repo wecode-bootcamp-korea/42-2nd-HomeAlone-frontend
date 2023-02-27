@@ -1,5 +1,5 @@
 const BASE_URl_S = 'http://10.58.52.189:8000';
-const BASE_URl_J = 'http://10.58.52.228:8000';
+const BASE_URl_J = 'http://10.58.52.101:8000';
 
 export const API = {
   LOGIN: `${BASE_URl_J}/users/kakaoLogin`,

@@ -11,6 +11,7 @@ import Payment from './pages/Payment/Payment';
 import Posting from './pages/Posting/Posting';
 import Detail from './pages/Detail/Detail';
 import Signup from './pages/Signup/Signup';
+import KakaoRedirect from './pages/Login/KakaoRedirect';
 
 const Router = () => {
   return (
@@ -25,6 +26,7 @@ const Router = () => {
           <Route path="/payment" element={<Payment />} />
           <Route path="/collections" element={<Collections />} />
         </Route>
+        <Route path="/auth/kakao/callback" element={<KakaoRedirect />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/posting" element={<Posting />} />

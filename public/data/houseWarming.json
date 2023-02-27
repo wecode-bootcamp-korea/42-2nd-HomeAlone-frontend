@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "빈티지 인테리어",
+      "nickname": "testuser",
+      "profileImage": null,
+      "type": "vintage",
+      "imageUrl": "images/soomin/houseWarming1.jpg",
+      "scrapCount": "1",
+      "commentCount": "0"
+    },
+    {
+      "id": 2,
+      "title": "레트로 무드 가득",
+      "nickname": "testuser2",
+      "profileImage": null,
+      "type": "vintage",
+      "imageUrl": "images/soomin/houseWarming2.jpg",
+      "scrapCount": "0",
+      "commentCount": "0"
+    },
+    {
+      "id": 3,
+      "title": "1800년대로의 여행",
+      "nickname": "testuser2",
+      "profileImage": null,
+      "type": "vintage",
+      "imageUrl": "images/soomin/houseWarming3.jpg",
+      "scrapCount": "0",
+      "commentCount": "0"
+    },
+    {
+      "id": 4,
+      "title": "1800년대로의 여행",
+      "nickname": "testuser2",
+      "profileImage": null,
+      "type": "vintage",
+      "imageUrl": "images/soomin/houseWarming4.jpg",
+      "scrapCount": "0",
+      "commentCount": "0"
+    },
+    {
+      "id": 5,
+      "title": "1800년대로의 여행",
+      "nickname": "testuser2",
+      "profileImage": null,
+      "type": "vintage",
+      "imageUrl": "images/soomin/houseWarming5.jpg",
+      "scrapCount": "0",
+      "commentCount": "0"
+    },
+    {
+      "id": 6,
+      "title": "1800년대로의 여행",
+      "nickname": "testuser2",
+      "profileImage": null,
+      "type": "vintage",
+      "imageUrl": "images/soomin/houseWarming1.jpg",
+      "scrapCount": "0",
+      "commentCount": "0"
+    }
+  ]
+}

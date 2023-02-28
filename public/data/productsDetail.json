@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "name": "협탁",
+    "price": 100000,
+    "discount": 10,
+    "imgUrl": "images/Detail/table.jpg",
+    "description": "튼튼한 협탁입니다!!!!!!!!!!!",
+    "shippingFee": "3000",
+    "salesAmount": 2,
+    "categoryId": 1
+  }
+]

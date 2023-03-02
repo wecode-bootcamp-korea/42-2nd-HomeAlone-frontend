@@ -12,11 +12,12 @@ export default function useSearch(initialValue) {
   }, [keyword]);
 
   const onChange = e => {
+    e.preventDefault();
     setKeyword(e.target.value);
   };
 
-  const filteredList = products.filter(product =>
-    product.name.includes(keyword)
+  const filteredList = products.filter(
+    product => product && product.productName.includes(keyword)
   );
 
   return [filteredList, keyword, onChange];

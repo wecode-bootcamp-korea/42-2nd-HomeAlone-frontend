@@ -2,20 +2,26 @@ import { useEffect, useState } from 'react';
 import * as S from './Filter.Style';
 import FilterModal from './FilterModal';
 
-export default function Filter() {
+export default function Filter({ searchParams, setSearchParams }) {
   const [currentMenuId, setCurrentMenuId] = useState(0);
   const [filterList, setFilterList] = useState({});
-  const [filter, getFilter] = useState({});
+  const [filter, setFilter] = useState({});
 
   useEffect(() => {
     setFilterList({ ...filterList, ...filter });
   }, [filter]);
 
+  useEffect(() => {
+    for (let key in filterList) {
+      searchParams.set(key, filterList[key]);
+    }
+    setSearchParams(searchParams);
+  }, [filterList]);
+
   const removeFilter = id => {
     const delFilter = Object.values(filterList).filter(
       filter => filter.id !== id
     );
-
     setFilterList(delFilter);
   };
 
@@ -25,6 +31,11 @@ export default function Filter() {
 
   const navOnMouseEnter = id => {
     setCurrentMenuId(id);
+  };
+
+  const handleFilter = (title, value) => {
+    setFilter({ ...filter, [title]: value });
+    setCurrentMenuId(0);
   };
 
   return (
@@ -43,13 +54,13 @@ export default function Filter() {
                 {title}
                 <S.DownArrow src="images/HomeWarmingList/down-arrow.png" />
               </S.Category>
-
               {currentMenuId === id && (
                 <FilterModal
+                  handleFilter={handleFilter}
                   setCurrentMenuId={setCurrentMenuId}
                   currentMenuId={currentMenuId}
-                  getFilter={getFilter}
                   idx={idx}
+                  setFilter={setFilter}
                 />
               )}
             </div>
@@ -69,7 +80,6 @@ export default function Filter() {
     </>
   );
 }
-
 export const FILTER_LIST = [
   {
     id: 1,

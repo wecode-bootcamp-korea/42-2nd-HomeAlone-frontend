@@ -4,10 +4,27 @@ import * as S from './Collections.style';
 export default function Collections() {
   const [houseDataList, setHouseDataList] = useState([]);
 
+  let token = localStorage.getItem('token');
+
   //TOFIX: mockData 연결 시 동작할 코드
+  // useEffect(() => {
+  //   fetch('/data/houseWarmingList.json', {
+  //     method: 'GET',
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setHouseDataList(data.data);
+  //     });
+  // }, []);
+
+  // TOFIX: API 연결 시 동작할 코드
   useEffect(() => {
-    fetch('/data/houseWarming.json', {
+    fetch(`http://10.58.52.132:8000/scraps/user`, {
       method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        authorization: token,
+      },
     })
       .then(res => res.json())
       .then(data => {
@@ -40,9 +57,9 @@ export default function Collections() {
               </>
             ) : (
               <S.HouseWarmingBox>
-                {houseDataList.map(({ id, imageUrl }) => {
+                {houseDataList.map(({ scrapId, imageUrl }) => {
                   return (
-                    <S.HouseWarmingLink to="/detail" key={id}>
+                    <S.HouseWarmingLink to="/detail" key={scrapId}>
                       <S.HouseWarmimgImg
                         src={imageUrl}
                         alt="houseWarmingCollection"

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { flex } from '../../styles/mixin';
+import { flex } from '../../../styles/mixin';
 import { Link } from 'react-router-dom';
 
 export const ListAllWrap = styled.div`
@@ -10,6 +10,8 @@ export const ListAllWrap = styled.div`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
+  color: black;
+  font-weight: 700;
 `;
 
 export const ListWrap = styled.div`
@@ -29,6 +31,8 @@ export const ListImg = styled.img`
 
 export const UserInfo = styled.div`
   ${flex('center', null, null)}
+  font-weight: 350;
+  color: #424242;
 `;
 
 export const UserImg = styled.img`
@@ -37,4 +41,24 @@ export const UserImg = styled.img`
   border-radius: 70%;
   margin-right: 5px;
   overflow: hidden;
+`;
+
+export const PostInfo = styled.div`
+  font-weight: 350;
+  color: #757575;
+`;
+
+export const PageBtnWrap = styled.div`
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 40px;
+`;
+
+export const PageBtn = styled.button`
+  border: solid 1px white;
+  background-color: white;
+  font-size: larger;
+  color: #757575;
+  cursor: pointer;
 `;

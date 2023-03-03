@@ -1,13 +1,11 @@
 import React from 'react';
 import * as S from './HomeWarmingList.Style';
-import Filter from './Filter/Filter';
-import List from './List';
+import List from './List/List';
 
 export default function HomeWarmingList() {
   return (
     <S.AllWrap>
       <S.HomeWarmingListWrap>
-        <Filter />
         <div>
           <List />
         </div>

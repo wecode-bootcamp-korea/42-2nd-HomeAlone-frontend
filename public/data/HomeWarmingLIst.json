@@ -1,56 +1,64 @@
-[
-  {
-    "id": 1,
-    "userId": "user1",
-    "title": "우리집",
-    "scrap": 10,
-    "view": 7,
-    "roomImg": "./images/HomeWarmingList/room.jpg",
-    "userImg": "./images/HomeWarmingList/userImg.png"
-  },
-  {
-    "id": 2,
-    "userId": "user2",
-    "title": "우리집",
-    "scrap": 10,
-    "view": 7,
-    "roomImg": "./images/HomeWarmingList/room.jpg",
-    "userImg": "./images/HomeWarmingList/userImg.png"
-  },
-  {
-    "id": 3,
-    "userId": "user3",
-    "title": "우리집",
-    "scrap": 10,
-    "view": 7,
-    "roomImg": "./images/HomeWarmingList/room.jpg",
-    "userImg": "./images/HomeWarmingList/userImg.png"
-  },
-  {
-    "id": 4,
-    "userId": "user4",
-    "title": "우리집",
-    "scrap": 10,
-    "view": 7,
-    "roomImg": "./images/HomeWarmingList/room.jpg",
-    "userImg": "./images/HomeWarmingList/userImg.png"
-  },
-  {
-    "id": 5,
-    "userId": "user5",
-    "title": "우리집",
-    "scrap": 10,
-    "view": 7,
-    "roomImg": "./images/HomeWarmingList/room.jpg",
-    "userImg": "./images/HomeWarmingList/userImg.png"
-  },
-  {
-    "id": 6,
-    "userId": "user6",
-    "title": "우리집",
-    "scrap": 10,
-    "view": 7,
-    "roomImg": "./images/HomeWarmingList/room.jpg",
-    "userImg": "./images/HomeWarmingList/userImg.png"
-  }
-]
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "우리집",
+      "userId": "user1",
+      "userImg": "./images/HomeWarmingList/userImg.png",
+      "type": "vintage",
+      "roomImg": "./images/HomeWarmingList/room.jpg",
+      "scrapCount": 10,
+      "commentCount": 7
+    },
+    {
+      "id": 2,
+      "title": "우리집",
+      "userId": "user1",
+      "userImg": "./images/HomeWarmingList/userImg.png",
+      "type": "vintage",
+      "roomImg": "./images/HomeWarmingList/room.jpg",
+      "scrapCount": 10,
+      "commentCount": 7
+    },
+    {
+      "id": 3,
+      "title": "우리집",
+      "userId": "user1",
+      "userImg": "./images/HomeWarmingList/userImg.png",
+      "type": "vintage",
+      "roomImg": "./images/HomeWarmingList/room.jpg",
+      "scrapCount": 10,
+      "commentCount": 7
+    },
+    {
+      "id": 4,
+      "title": "우리집",
+      "userId": "user1",
+      "userImg": "./images/HomeWarmingList/userImg.png",
+      "type": "vintage",
+      "roomImg": "./images/HomeWarmingList/room.jpg",
+      "scrapCount": 10,
+      "commentCount": 7
+    },
+    {
+      "id": 5,
+      "title": "우리집",
+      "userId": "user1",
+      "userImg": "./images/HomeWarmingList/userImg.png",
+      "type": "vintage",
+      "roomImg": "./images/HomeWarmingList/room.jpg",
+      "scrapCount": 10,
+      "commentCount": 7
+    },
+    {
+      "id": 6,
+      "title": "우리집",
+      "userId": "user1",
+      "userImg": "./images/HomeWarmingList/userImg.png",
+      "type": "vintage",
+      "roomImg": "./images/HomeWarmingList/room.jpg",
+      "scrapCount": 10,
+      "commentCount": 7
+    }
+  ]
+}

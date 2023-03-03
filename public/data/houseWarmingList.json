@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "scrapId": 1,
+      "imageUrl": "https://drive.google.com/uc?export=view&id=1zd7kJmXrwHzZRfUlfoRuPEpVP73Ml86X"
+    },
+    {
+      "id": 2,
+      "scrapId": 2,
+      "imageUrl": "https://drive.google.com/uc?export=view&id=1oTDirLQZgjgtS8OK5OQ1ENGYP2T5IuWP"
+    },
+    {
+      "id": 3,
+      "scrapId": 3,
+      "imageUrl": "https://drive.google.com/uc?export=view&id=1l61-0Zh4Vl8Tyxu7l_gDchz1hRJQcYuJ"
+    }
+  ]
+}

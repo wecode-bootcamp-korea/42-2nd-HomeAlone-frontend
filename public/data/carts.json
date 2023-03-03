@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "imageUrl": "images/nav/bed.jpg",
+    "name": "화이트 일체형 침대",
+    "price": "159900",
+    "quantity": 1
+  },
+  {
+    "id": 2,
+    "imageUrl": "images/nav/table.jpg",
+    "name": "나무 테이블",
+    "price": "209900",
+    "quantity": 1
+  },
+  {
+    "id": 3,
+    "imageUrl": "images/nav/sofa.jpg",
+    "name": "1인용 쇼파",
+    "price": "489900",
+    "quantity": 1
+  },
+  {
+    "id": 4,
+    "imageUrl": "images/nav/lamp.jpg",
+    "name": "플로어램프",
+    "price": "1119900",
+    "quantity": 1
+  }
+]

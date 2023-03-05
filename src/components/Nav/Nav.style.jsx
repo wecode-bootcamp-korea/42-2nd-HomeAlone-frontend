@@ -9,7 +9,9 @@ export const Nav = styled.nav`
   padding: 45px 120px;
   width: 100vw;
   height: 70px;
+  background-color: white;
   border-bottom: 1px solid #eeeeee;
+  z-index: 5;
 `;
 
 export const MenuBox = styled.div`

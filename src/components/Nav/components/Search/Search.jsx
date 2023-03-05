@@ -4,11 +4,7 @@ import SearchBox from '../SearchBox/SearchBox';
 import * as S from './Search.style';
 
 export default function Search() {
-  const [products, keyword, onChange] = useSearch();
-
-  const filteredList = products.filter(product =>
-    product.name.includes(keyword)
-  );
+  const [filteredList, keyword, onChange] = useSearch();
 
   return (
     <>

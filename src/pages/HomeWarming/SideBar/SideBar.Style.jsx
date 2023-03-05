@@ -21,6 +21,17 @@ export const BookMarkBtn = styled.img`
   border-radius: 70px;
   border: solid #dadce0 1px;
   padding: 10px;
+  cursor: pointer;
+`;
+
+export const ChangeBookMarkBtn = styled.img`
+  width: 65px;
+  height: 65px;
+  border-radius: 70px;
+  border: solid #dadce0 1px;
+  padding: 10px;
+  background-color: #35c5f0;
+  cursor: pointer;
 `;
 
 export const BookMarkCount = styled.p`

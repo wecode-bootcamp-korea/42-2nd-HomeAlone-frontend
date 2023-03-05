@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { flex } from '../../styles/mixin';
+import theme from '../../styles/theme';
 
 export const TitleImg = styled.img`
   width: 100%;
@@ -48,6 +49,7 @@ export const UserId = styled.div`
 `;
 
 export const HomeImg = styled.img`
+  position: relative;
   width: 100%;
 `;
 
@@ -71,4 +73,25 @@ export const TextWrap = styled.div`
 
 export const UserName = styled.p`
   font-weight: 700;
+`;
+
+export const MarkerBox = styled.div`
+  ${flex(null, 'center', 'column')}
+  position: absolute;
+  top: ${({ pixelColumn }) => pixelColumn}px;
+  left: ${({ pixelRow }) => pixelRow}px;
+  transform: translate(2000%, 5000%);
+  gap: 10px;
+  z-index: 3;
+`;
+
+export const PlusBtn = styled.button`
+  width: 24px;
+  height: 24px;
+  background-color: ${theme.mainBlue};
+  border-style: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
 `;

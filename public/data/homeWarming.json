@@ -1,0 +1,35 @@
+{
+  "data": [
+    {
+      "id": 85,
+      "title": "집들이 포스트 테스트22",
+      "createdAt": "2023-03-06T06:33:24.000Z",
+      "description": "테스트 본문입니다",
+      "nickname": "수영",
+      "profileImage": "http://k.kakaocdn.net/dn/TDPrR/btr0RKp7Ldi/nLjXG2Ngse8HWVEqwCkKo0/img_640x640.jpg",
+      "type": "vintage",
+      "scrapCount": "1",
+      "commentCount": "0",
+      "postImageUrl": "https://homealonebucket.s3.ap-northeast-2.amazonaws.com/1678084403253b55b8390-690f-49e6-ad81-48566d65a966photo-1631679706909-1844bbd07221.jpg",
+      "productInfo": [
+        {
+          "name": "폭신 헤드 침대",
+          "pixelRow": 150,
+          "productId": 1,
+          "pixelColumn": 150,
+          "sellingPrice": 150000,
+          "productImageUrl": "https://drive.google.com/uc?export=view&id=1zd7kJmXrwHzZRfUlfoRuPEpVP73Ml86X"
+        },
+        {
+          "name": "모던 블랙 테이블",
+          "pixelRow": 100,
+          "productId": 2,
+          "pixelColumn": 70,
+          "sellingPrice": 28000,
+          "productImageUrl": "https://drive.google.com/uc?export=view&id=1oTDirLQZgjgtS8OK5OQ1ENGYP2T5IuWP"
+        }
+      ],
+      "isScrapped": true
+    }
+  ]
+}

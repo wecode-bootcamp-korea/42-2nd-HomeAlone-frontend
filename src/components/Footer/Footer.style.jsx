@@ -4,12 +4,13 @@ import { flex } from '../../styles/mixin';
 const bgColor = '#f7f9fa';
 const borderColor = '#eeeeee';
 
-export const Footer = styled.div`
+export const Footer = styled.footer`
   ${flex('center', 'center', null)};
-  position: relative;
+  position: absolute;
   transform: translateY(-100%);
   width: 100vw;
   height: 200px;
+  margin-top: 50px;
   padding: 30px;
   background-color: ${bgColor};
 `;

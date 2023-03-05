@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <S.Footer>
       <S.Service>
-        <p>고객센터 ></p>
+        <p>고객센터 {'>'}</p>
         <p>070-4323-4050</p>
         <button>카톡상담(평일 09:00~18:00)</button>
         <button>이메일 문의</button>

@@ -5,7 +5,6 @@ export const AllWrap = styled.div`
   ${flex('center', null, null)}
   height: auto;
   min-height: 100%;
-  padding-bottom: 250px;
 `;
 
 export const DetailAllWrap = styled.div`
@@ -28,7 +27,7 @@ export const ProductImgWrap = styled.div`
 
 export const ProductImg = styled.img`
   width: 100%;
-  height: 100%;
+  height: 91%;
   border-radius: 8px;
 `;
 

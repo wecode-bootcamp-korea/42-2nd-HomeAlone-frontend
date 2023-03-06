@@ -12,3 +12,5 @@ export const API = {
   COMMENTS: `${BASE_URl_S}/comments`,
   REVIEWS: `${BASE_URl_J}/reviews`,
 };
+
+export default API;

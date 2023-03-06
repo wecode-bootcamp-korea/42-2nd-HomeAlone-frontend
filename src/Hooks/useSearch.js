@@ -15,5 +15,9 @@ export default function useSearch(initialValue) {
     setKeyword(e.target.value);
   };
 
-  return [products, keyword, onChange];
+  const filteredList = products.filter(product =>
+    product.name.includes(keyword)
+  );
+
+  return [filteredList, keyword, onChange];
 }

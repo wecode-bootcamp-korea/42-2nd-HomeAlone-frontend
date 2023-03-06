@@ -11,36 +11,57 @@ export default function Main() {
       .then(data => setPosts(data));
   }, []);
 
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    prevArrow: <PrevBtn />,
+    nextArrow: <NextBtn />,
+  };
+
   return (
     <S.Main>
-      <S.MainHome>
-        <S.MainImg src="/images/main/mainRoom.jpg" alt="Main Room Img" />
-        <S.MainTitle>
-          공간을 가꾸며 나를 가꿔요, 포근한 8평의 기록 🤍
-        </S.MainTitle>
-      </S.MainHome>
+      <S.ToHomeWarming to="/home-warming/1">
+        {posts[0] && (
+          <S.MainHome>
+            <S.MainTitle>{posts[0].title}</S.MainTitle>
+            <S.MainImg src={posts[0].imageUrl} alt="Room Img" />
+          </S.MainHome>
+        )}
+      </S.ToHomeWarming>
       <S.RoomTitle>온라인 집들이🏠</S.RoomTitle>
       <S.RoomWrapper>
-        <S.PrevBtn>
-          <span>{'<'}</span>
-        </S.PrevBtn>
-        <S.RoomBox>
-          {posts.map(post => {
-            return (
-              <S.RoomList key={post.id}>
-                <img src={post.imageUrl} alt="Room Img" />
-                <p>
-                  <S.RoomStyle>{post.roomStyle} </S.RoomStyle>
-                  {post.title}
-                </p>
-              </S.RoomList>
-            );
-          })}
-        </S.RoomBox>
-        <S.NextBtn>
-          <span>{'>'}</span>
-        </S.NextBtn>
+        {posts && (
+          <S.RoomBox {...settings}>
+            {posts.map(({ id, imageUrl, roomStyle, title }) => {
+              return (
+                <S.ToHomeWarming key={id} to={`/home-warming/${id}`}>
+                  <S.RoomItem>
+                    <img src={imageUrl} alt="Room Img" />
+                    <p>
+                      <S.RoomStyle>{roomStyle} </S.RoomStyle>
+                      {title}
+                    </p>
+                  </S.RoomItem>
+                </S.ToHomeWarming>
+              );
+            })}
+          </S.RoomBox>
+        )}
       </S.RoomWrapper>
     </S.Main>
   );
+}
+
+function PrevBtn(props) {
+  const { onClick } = props;
+  return <S.PrevBtn onClick={onClick}>{'<'}</S.PrevBtn>;
+}
+
+function NextBtn(props) {
+  const { onClick } = props;
+  return <S.NextBtn onClick={onClick}>{'>'}</S.NextBtn>;
 }

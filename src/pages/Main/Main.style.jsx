@@ -1,6 +1,11 @@
+import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import theme from '../../styles/theme';
 import { flex } from '../../styles/mixin';
+import { linkStyle } from '../../styles/mixin';
 import { carouselBtn } from '../../styles/mixin';
 
 export const Main = styled.main`
@@ -46,32 +51,43 @@ export const RoomWrapper = styled.div`
   overflow: hidden;
 `;
 
-export const PrevBtn = styled.button`
+export const PrevBtn = styled.div`
   ${carouselBtn}
-  left: 2%;
+  left: -2%;
 `;
 
-export const NextBtn = styled.button`
+export const NextBtn = styled.div`
   ${carouselBtn}
-  right: 2%;
+  right: -2%;
 `;
 
-export const RoomBox = styled.div`
-  display: flex;
-  width: 1100px;
-  gap: 20px;
-  transition: all 0.5s ease-in-out;
-  overflow: hidden;
+export const RoomBox = styled(Slider)`
+  .slick-list {
+    width: 1100px;
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .slick-prev::before,
+  .slick-next::before {
+    display: none;
+  }
 `;
 
-export const RoomList = styled.div`
+export const ToHomeWarming = styled(Link)`
+  ${linkStyle}
+`;
+
+export const RoomItem = styled.div`
   width: 260px;
   height: 240px;
+  outline: none;
 
   img {
     width: 260px;
     height: 200px;
     border-radius: 5px;
+    margin-bottom: 10px;
   }
 `;
 

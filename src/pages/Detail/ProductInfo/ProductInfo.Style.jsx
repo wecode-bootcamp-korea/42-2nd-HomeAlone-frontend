@@ -4,6 +4,7 @@ import { flex } from '../../../styles/mixin';
 export const ProductInfoWrap = styled.div`
   margin-left: 30px;
   width: 50%;
+  height: 91%;
 `;
 
 export const ProductName = styled.p`
@@ -17,6 +18,16 @@ export const Review = styled.p`
   margin-bottom: 20px;
   color: #009fcd;
   font-size: 20px;
+`;
+
+export const DiscountWrap = styled.p`
+  ${flex('flex-start', null, null)}
+`;
+
+export const productPrice = styled.p`
+  margin-right: 10px;
+  color: #757575;
+  text-decoration: line-through;
 `;
 
 export const Discount = styled.p`
@@ -38,22 +49,26 @@ export const DeliveryWrap = styled.div`
 
 export const DeliveryTitle = styled.p`
   margin-right: 10px;
-`;
-
-export const ExplainProduct = styled.p`
-  line-height: 1.5;
-  margin-bottom: 10px;
+  color: #757575;
+  margin-bottom: 30px;
 `;
 
 export const OptionWrap = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   padding: 10px;
   border-radius: 4px;
   background-color: #f5f5f5;
 `;
 
-export const Name = styled.p`
+export const ExplainTitle = styled.p`
   margin: 10px;
+  color: #757575;
+`;
+
+export const ExplainProduct = styled.p`
+  line-height: 1.5;
+  margin: 10px;
+  font-size: 15px;
 `;
 
 export const QuantityWrap = styled.div`

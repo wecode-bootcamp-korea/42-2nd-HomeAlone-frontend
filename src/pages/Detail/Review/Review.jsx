@@ -1,14 +1,35 @@
-import { useState } from 'react';
-import * as S from './Review.Style';
+import { useEffect, useState } from 'react';
+import PostReview from './PostReview';
 import ReviewModal from './ReviewModal';
+import API from '../../../config/config';
+import * as S from './Review.Style';
 
-export default function Review() {
+export default function Review({ productDetail }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [postReview, setPostReview] = useState([{}]);
 
+  useEffect(() => {
+    fetch(`${API.REVIEWS}?productId=1&sort=recent`, {
+      method: 'GET',
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        setPostReview(data.data);
+      });
+  }, []);
+
+  const reviewScores = postReview.map(score => score.reviewRating);
+  const averageScore =
+    reviewScores.reduce((sum, score) => sum + score, 0) / reviewScores.length;
   return (
     <div>
       <S.ReviewTitleWrap>
-        <S.Title>리뷰 개수</S.Title>
+        <S.ReviewCount>
+          <S.Title>리뷰</S.Title>
+          <S.CountReview>{postReview.length}건</S.CountReview>
+        </S.ReviewCount>
         <S.WriteReview
           onClick={() => {
             setIsModalOpen(true);
@@ -16,23 +37,23 @@ export default function Review() {
         >
           리뷰쓰기
         </S.WriteReview>
-        {isModalOpen && <ReviewModal setIsModalOpen={setIsModalOpen} />}
+        {isModalOpen && (
+          <ReviewModal
+            productDetail={productDetail}
+            setIsModalOpen={setIsModalOpen}
+          />
+        )}
       </S.ReviewTitleWrap>
       <S.ReviewFilter>
         <S.Best>베스트순</S.Best>
         <S.Recent>최신순</S.Recent>
-        <S.Average>리뷰평점</S.Average>
+        <S.AverageTitle>리뷰평점</S.AverageTitle>
+        <S.Average>{averageScore}점</S.Average>
       </S.ReviewFilter>
       <S.ReviewDetail>
-        <S.UserInfo>
-          <S.UserImg src="/images/Detail/userImg.png" alt="userimg" />
-          <S.UserName>user1</S.UserName>
-          <p>점수</p>
-        </S.UserInfo>
-        <S.ProductName>상품이름</S.ProductName>
-        <S.ProductImg src="/images/Detail/table.jpg" alt="productimg" />
-        <S.ReviewText>리뷰내용</S.ReviewText>
-        <S.SuggestionBtn>도움이 돼요</S.SuggestionBtn>
+        {postReview.map(reviewData => {
+          return <PostReview key={reviewData.userId} reviewData={reviewData} />;
+        })}
       </S.ReviewDetail>
     </div>
   );

@@ -1,13 +1,15 @@
-[
-  {
-    "id": 1,
-    "name": "협탁",
-    "price": 100000,
-    "discount": 10,
-    "imgUrl": "images/Detail/table.jpg",
-    "description": "튼튼한 협탁입니다!!!!!!!!!!!",
-    "shippingFee": "3000",
-    "salesAmount": 2,
-    "categoryId": 1
+{
+  "data": {
+    "productId": 1,
+    "productName": "협탁",
+    "productPrice": "100000.00",
+    "productDiscount": "20000.00",
+    "productImage": "/images/Detail/table.jpg",
+    "productDescription": "튼튼한 협탁입니다!!!!!!!!!!!",
+    "productShippingFee": "10000.00",
+    "finalPrice": "80000.00",
+    "discountPercentage": "20.000000",
+    "ratingAmount": "5",
+    "averageRatings": "4.2000"
   }
-]
+}

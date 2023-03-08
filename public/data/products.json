@@ -1,26 +1,26 @@
 [
   {
-    "id": 1,
-    "img": "images/nav/bed.jpg",
-    "name": "화이트 일체형 침대",
-    "price": "159,900"
+    "productId": 1,
+    "productImage": "images/nav/bed.jpg",
+    "productName": "화이트 일체형 침대",
+    "sellingPrice": "159,900"
   },
   {
-    "id": 2,
-    "img": "images/nav/table.jpg",
-    "name": "나무 테이블",
-    "price": "209,900"
+    "productId": 2,
+    "productImage": "images/nav/table.jpg",
+    "productName": "나무 테이블",
+    "sellingPrice": "209,900"
   },
   {
-    "id": 3,
-    "img": "images/nav/sofa.jpg",
-    "name": "1인용 쇼파",
-    "price": "489,900"
+    "productId": 3,
+    "productImage": "images/nav/sofa.jpg",
+    "productName": "1인용 쇼파",
+    "sellingPrice": "489,900"
   },
   {
-    "id": 4,
-    "img": "images/nav/lamp.jpg",
-    "name": "플로어램프",
-    "price": "1,119,900"
+    "productId": 4,
+    "productImage": "images/nav/lamp.jpg",
+    "productName": "플로어램프",
+    "sellingPrice": "1,119,900"
   }
 ]

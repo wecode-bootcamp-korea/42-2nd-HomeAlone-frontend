@@ -20,6 +20,8 @@ export default function Review({ productDetail }) {
       });
   }, []);
 
+  console.log(postReview);
+
   const reviewScores = postReview.map(score => score.reviewRating);
   const averageScore =
     reviewScores.reduce((sum, score) => sum + score, 0) / reviewScores.length;

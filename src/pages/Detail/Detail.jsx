@@ -7,7 +7,7 @@ import * as S from './Detail.Style';
 
 export default function Detail() {
   const [productDetail, setProductDetail] = useState({});
-
+  console.log(productDetail);
   const params = useParams();
   useEffect(() => {
     fetch(`${API.PRODUCTS}/detail/${params.id}`, {

@@ -38,13 +38,13 @@ export default function Main() {
       <S.RoomWrapper>
         {posts && (
           <S.RoomBox {...settings}>
-            {posts.map(({ id, imageUrl, roomStyle, title }) => {
+            {posts.map(({ id, imageUrl, type, title }) => {
               return (
                 <S.ToHomeWarming key={id} to={`/home-warming/${id}`}>
                   <S.RoomItem>
                     <img src={imageUrl} alt="Room Img" />
                     <p>
-                      <S.RoomStyle>{roomStyle} </S.RoomStyle>
+                      <S.RoomStyle>{type} </S.RoomStyle>
                       {title}
                     </p>
                   </S.RoomItem>

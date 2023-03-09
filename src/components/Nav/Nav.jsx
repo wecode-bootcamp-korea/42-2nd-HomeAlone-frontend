@@ -4,14 +4,14 @@ import Search from './components/Search/Search';
 import * as S from './Nav.style';
 
 export default function Nav() {
-  const token = localStorage.getItem('token');
+  const Token = localStorage.getItem('token');
   const navigate = useNavigate();
 
   const toPosting = () => {
-    if (!token) {
+    if (!Token) {
       alert('로그인이 필요한 서비스입니다. \n로그인하시겠습니까?');
       navigate('/login');
-    } else if (token) {
+    } else if (Token) {
       navigate('/posting');
     }
   };
@@ -43,7 +43,7 @@ export default function Nav() {
           <S.IconImg src="images/nav/cart.png" alt="Cart Img" />
         </Link>
 
-        {token ? (
+        {Token ? (
           <>
             <S.MemberBox onClick={toLogout}>
               <S.MenuImg src="images/nav/menu.png" alt="Menu Img" />

@@ -7,7 +7,7 @@ export const API = {
   PRODUCTS: `${BASE_URl_S}/products`,
   CARTS: `${BASE_URl_S}/carts`,
   FROMCART: `${BASE_URl_S}/carts?fromCart`,
-  ORDERS: `${BASE_URl_J}/orders`,
+  ORDERS: `${BASE_URl_S}/orders`,
   SCRAPS: `${BASE_URl_S}/scraps`,
   COMMENTS: `${BASE_URl_S}/comments`,
   REVIEWS: `${BASE_URl_J}/reviews`,

@@ -7,7 +7,7 @@ export default function UserBox() {
 
   const { nickname, email } = users;
 
-  const token = localStorage.getItem('token');
+  const Token = localStorage.getItem('token');
 
   //TODO: mock data fetch
   // useEffect(() => {
@@ -22,7 +22,7 @@ export default function UserBox() {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
-        authorization: token,
+        authorization: Token,
       },
     })
       .then(res => res.json())

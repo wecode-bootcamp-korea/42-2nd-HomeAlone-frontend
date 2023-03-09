@@ -23,6 +23,7 @@ export default function Collections() {
         setuserInpo(data.user);
       });
   }, []);
+  console.log(houseDataList);
 
   return (
     <S.Main>
@@ -46,9 +47,12 @@ export default function Collections() {
               </>
             ) : (
               <S.HouseWarmingBox>
-                {houseDataList.map(({ scrapId, imageUrl }) => {
+                {houseDataList.map(({ scrapId, imageUrl, id }) => {
                   return (
-                    <S.HouseWarmingLink to="/detail" key={scrapId}>
+                    <S.HouseWarmingLink
+                      to={`/home-warming/${id}`}
+                      key={scrapId}
+                    >
                       <S.HouseWarmimgImg
                         src={imageUrl}
                         alt="houseWarmingCollection"

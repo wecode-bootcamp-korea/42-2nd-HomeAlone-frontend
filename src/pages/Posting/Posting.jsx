@@ -100,7 +100,6 @@ export default function Posting() {
       .then(response => response.json())
       .then(data => {
         if (data.message === 'success') {
-          alert('성공');
           navigate('/home-warming-list');
         } else {
           alert('실패');

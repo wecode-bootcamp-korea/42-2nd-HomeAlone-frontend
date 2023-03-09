@@ -4,21 +4,21 @@ import Search from './components/Search/Search';
 import * as S from './Nav.style';
 
 export default function Nav() {
-  const accessToken = localStorage.getItem('UserToken');
+  const token = localStorage.getItem('token');
   const navigate = useNavigate();
 
   const toPosting = () => {
-    if (!accessToken) {
+    if (!token) {
       alert('로그인이 필요한 서비스입니다. \n로그인하시겠습니까?');
       navigate('/login');
-    } else if (accessToken) {
+    } else if (token) {
       navigate('/posting');
     }
   };
 
   const toLogout = () => {
     alert('로그아웃하시겠습니까?');
-    localStorage.removeItem('UserToken');
+    localStorage.removeItem('token');
   };
 
   return (
@@ -41,7 +41,7 @@ export default function Nav() {
           <S.IconImg src="images/nav/cart.png" alt="Cart Img" />
         </Link>
 
-        {accessToken ? (
+        {token ? (
           <>
             <S.MemberBox onClick={toLogout}>
               <S.MenuImg src="images/nav/menu.png" alt="Menu Img" />

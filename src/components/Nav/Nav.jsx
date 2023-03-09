@@ -27,10 +27,12 @@ export default function Nav() {
         <Link to="/">
           <S.Logo src="images/nav/logo.png" alt="Logo Img" />
         </Link>
-        <Link to="/home-warming-list">
-          <S.MenuBtn>커뮤니티</S.MenuBtn>
-        </Link>
-        <S.MenuBtn>쇼핑</S.MenuBtn>
+        <S.Menu>
+          <Link to="/home-warming-list">
+            <S.MenuBtn>커뮤니티</S.MenuBtn>
+          </Link>
+          <S.MenuBtn>쇼핑</S.MenuBtn>
+        </S.Menu>
       </S.MenuBox>
       <Search />
       <S.IconBox>

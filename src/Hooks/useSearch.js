@@ -1,14 +1,19 @@
 import { useEffect, useState } from 'react';
+import { API } from '../config/config';
 
 export default function useSearch(initialValue) {
   const [products, setProducts] = useState([]);
   const [keyword, setKeyword] = useState(initialValue);
 
-  //TODO: mock 데이터 연결
   useEffect(() => {
-    fetch('/data/products.json')
+    fetch(`${API.PRODUCTS}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+    })
       .then(res => res.json())
-      .then(data => setProducts(data));
+      .then(data => setProducts(data.data));
   }, [keyword]);
 
   const onChange = e => {
@@ -16,9 +21,9 @@ export default function useSearch(initialValue) {
     setKeyword(e.target.value);
   };
 
-  const filteredList = products.filter(
-    product => product && product.productName.includes(keyword)
-  );
+  const filteredList =
+    products !== '' &&
+    products.filter(product => product.productName.includes(keyword));
 
-  return [filteredList, keyword, onChange];
+  return [filteredList, keyword, onChange, setKeyword];
 }

@@ -1,19 +1,18 @@
 import React from 'react';
 import * as S from './SearchBox.style';
 
-export default function SearchBox({ filteredList, keyword }) {
+export default function SearchBox({ filteredList, keyword, handleSearch }) {
   return (
-    <S.SearchBoxWrapper>
+    <S.SearchBoxWrapper onClick={handleSearch}>
       {filteredList.length >= 1 && keyword !== '' && (
         <>
-          {filteredList.map(({ id, img, name, price }) => (
-            <S.ToDetail key={id} to={`/detail/${id}`}>
+          {filteredList.map(({ productId, productImage, productName }) => (
+            <S.ToDetail key={productId} to={`/detail/${productId}`}>
               <S.List>
-                <img src={img} alt="Product Img" />
-                <S.Item>
-                  <p>{name}</p>
-                  <p>{price}원</p>
-                </S.Item>
+                <img src={productImage} alt="Product Img" />
+                <div>
+                  <p>{productName}</p>
+                </div>
               </S.List>
             </S.ToDetail>
           ))}

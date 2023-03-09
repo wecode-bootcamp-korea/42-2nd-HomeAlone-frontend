@@ -30,8 +30,3 @@ export const List = styled.div`
     height: 40px;
   }
 `;
-
-export const Item = styled.div`
-  ${flex(null, 'flex-start', 'column')}
-  gap: 5px;
-`;

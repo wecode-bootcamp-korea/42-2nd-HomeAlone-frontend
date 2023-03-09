@@ -4,8 +4,7 @@ import * as S from './MarkerModal.style';
 
 export default function MarkerModal({
   isSelectClicked,
-  isProductInfoOpen,
-  handleMarker,
+  isModalOpen,
   setIsSelectClicked,
   onClickClose,
   handleProductId,
@@ -15,15 +14,14 @@ export default function MarkerModal({
   const onClickSelect = (e, product) => {
     handleProductId(e, product);
     setIsSelectClicked(true);
-    handleMarker(e);
   };
 
   return (
     <div>
-      {isProductInfoOpen && (
-        <S.MarkerModalBox>
-          {!isSelectClicked ? (
-            <>
+      <S.MarkerModalWrapper>
+        {isModalOpen &&
+          (!isSelectClicked ? (
+            <S.MarkerModalBox>
               <S.SearchBox>
                 <S.SearchBar
                   type="text"
@@ -57,27 +55,23 @@ export default function MarkerModal({
                     })}
                 </S.SearchedList>
               )}
-            </>
+            </S.MarkerModalBox>
           ) : (
-            <S.SearchBox>
-              <S.SearchedList>
-                {filteredList &&
-                  filteredList.map(product => (
-                    <S.SearchedItem key={product.productId}>
-                      <S.ItemBox>
-                        <S.ItemImg
-                          src={product.productImage}
-                          alt="Product Img"
-                        />
-                        <p>{product.productName}</p>
-                      </S.ItemBox>
-                    </S.SearchedItem>
-                  ))}
-              </S.SearchedList>
-            </S.SearchBox>
-          )}
-        </S.MarkerModalBox>
-      )}
+            <S.ProductModal>
+              {filteredList && (
+                <S.SearchedItem key={filteredList[0].productId}>
+                  <S.ItemBox>
+                    <S.ItemImg
+                      src={filteredList[0].productImage}
+                      alt="Product Img"
+                    />
+                    <p>{filteredList[0].productName}</p>
+                  </S.ItemBox>
+                </S.SearchedItem>
+              )}
+            </S.ProductModal>
+          ))}
+      </S.MarkerModalWrapper>
     </div>
   );
 }

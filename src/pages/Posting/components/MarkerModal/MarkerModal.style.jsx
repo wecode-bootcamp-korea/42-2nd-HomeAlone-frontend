@@ -2,11 +2,16 @@ import styled from 'styled-components';
 import { flex } from '../../../../styles/mixin';
 import theme from '../../../../styles/theme';
 
+export const MarkerModalWrapper = styled.div`
+  width: 375px;
+  height: 150px;
+`;
+
 export const MarkerModalBox = styled.div`
   ${flex(null, 'center', 'column')}
   padding: 10px;
   width: 375px;
-  height: 200px;
+  height: 150px;
   background-color: white;
   border: 1px solid ${theme.borderColor};
   border-radius: 4px;
@@ -39,9 +44,17 @@ export const CloseBtn = styled.button`
   cursor: pointer;
 `;
 
+export const ProductModal = styled.div`
+  ${flex(null, 'center', 'column')}
+  width: 375px;
+  height: 100px;
+  background-color: white;
+  border: 1px solid ${theme.borderColor};
+  border-radius: 4px;
+`;
+
 export const SearchedList = styled.ul`
   position: relative;
-  margin-top: 20px;
   overflow-y: scroll;
 `;
 
@@ -50,7 +63,7 @@ export const SearchedItem = styled.li`
   width: 375px;
   height: 60px;
   padding: 5px 20px;
-  margin-bottom: 10px;
+  margin-top: 20px;
 `;
 
 export const ItemBox = styled.div`

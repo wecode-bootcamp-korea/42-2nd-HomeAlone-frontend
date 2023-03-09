@@ -109,8 +109,8 @@ export const UploadedImg = styled.img`
 
 export const Tag = styled.div`
   position: absolute;
-  bottom: 32%;
-  right: 54%;
+  bottom: 31%;
+  right: 55%;
   padding: 10px 15px;
   background-color: ${theme.mainBlue};
   border-style: none;
@@ -124,7 +124,7 @@ export const MarkerBox = styled.div`
   position : absolute;
   top: ${({ pixelColumn }) => pixelColumn}px;
   left: ${({ pixelRow }) => pixelRow}px;
-  transform: translate(3%, 115%);
+  transform: translate(3%, 146%);
   gap: 10px;
   z-index: 3;
 `;

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import MarkerModal from '../MarkerModal/MarkerModal';
 import * as S from './ContentForm.style';
 
@@ -14,30 +14,29 @@ export default function ContentForm({
   description,
   handleDesc,
 }) {
-  const [isTagClicked, setIsTagClicked] = useState(false);
+  const [isImgClicked, setIsImgClicked] = useState(false);
   const [isCloseClicked, setIsCloseClicked] = useState(false);
   const [isSelectClicked, setIsSelectClicked] = useState(false);
-  const [isProductInfoOpen, setIsproductInfoOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
   const onClickTag = e => {
     e.preventDefault();
-    setIsTagClicked(prev => !prev);
+    setIsImgClicked(prev => !prev);
     handleMarker(e);
   };
 
   const onClickClose = e => {
     setIsCloseClicked(false);
-    setIsTagClicked(false);
-    handleMarker(e);
+    setIsImgClicked(false);
   };
 
   const onClickPlusBtn = e => {
     e.preventDefault();
-    setIsproductInfoOpen(prev => !prev);
+    setIsModalOpen(prev => !prev);
   };
 
-  const pixelRow = uploadInfo.productInfo[0]?.pixelRow;
-  const pixelColumn = uploadInfo.productInfo[0]?.pixelColumn;
+  const pixelRow = uploadInfo.marker[0]?.pixelRow;
+  const pixelColumn = uploadInfo.marker[0]?.pixelColumn;
 
   return (
     <S.ContentFormBox>
@@ -77,7 +76,7 @@ export default function ContentForm({
               onClick={e => onClickTag(e)}
             />
 
-            {isTagClicked && (
+            {isImgClicked && (
               <S.MarkerBox pixelRow={pixelRow} pixelColumn={pixelColumn}>
                 {!isCloseClicked && (
                   <>
@@ -86,7 +85,7 @@ export default function ContentForm({
                     </S.MarkerBtn>
                     <MarkerModal
                       isSelectClicked={isSelectClicked}
-                      isProductInfoOpen={isProductInfoOpen}
+                      isModalOpen={isModalOpen}
                       handleMarker={handleMarker}
                       setIsSelectClicked={setIsSelectClicked}
                       onClickClose={onClickClose}

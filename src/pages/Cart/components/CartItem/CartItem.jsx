@@ -91,7 +91,7 @@ export default function CartItem({
                   <S.ItemFooter>배송비 무료</S.ItemFooter>
                 ) : (
                   <S.ItemFooter>
-                    배송비 {Math.trunc(data.shippingFee)}원
+                    배송비 {Math.trunc(data.shippingFee).toLocaleString()}원
                   </S.ItemFooter>
                 )}
               </S.ItemBoxList>

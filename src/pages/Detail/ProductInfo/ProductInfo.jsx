@@ -65,9 +65,12 @@ export default function ProductInfo({ productDetail }) {
         <S.ExplainProduct>{productDetail.productDescription}</S.ExplainProduct>
         <S.QuantityWrap>
           <S.QuantityHandle>
-            <S.QuantityMinus onClick={minusBtn} src="images/Detail/minus.png" />
+            <S.QuantityMinus
+              onClick={minusBtn}
+              src="/images/Detail/minus.png"
+            />
             <S.Quantity>{quantity}</S.Quantity>
-            <S.QuantityPlus onClick={plusBtn} src="images/Detail/plus.png" />
+            <S.QuantityPlus onClick={plusBtn} src="/images/Detail/plus.png" />
           </S.QuantityHandle>
           <S.TotalPrice>
             {Number(productDetail.finalPrice * quantity).toLocaleString(

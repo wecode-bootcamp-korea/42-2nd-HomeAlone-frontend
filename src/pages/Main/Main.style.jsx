@@ -35,6 +35,7 @@ export const MainImg = styled.img`
   height: 510px;
   margin-bottom: 100px;
   border-radius: 5px;
+  object-fit: cover;
 `;
 
 export const RoomTitle = styled.p`

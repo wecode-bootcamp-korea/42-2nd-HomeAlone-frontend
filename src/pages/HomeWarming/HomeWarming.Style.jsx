@@ -3,6 +3,7 @@ import { flex } from '../../styles/mixin';
 import theme from '../../styles/theme';
 
 export const TitleImg = styled.img`
+  object-fit: cover;
   width: 100%;
   height: 600px;
   margin-top: 91px;

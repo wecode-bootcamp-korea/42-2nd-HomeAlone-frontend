@@ -22,14 +22,14 @@ export default function Payment() {
     paymentType: '',
   });
 
-  const token = localStorage.getItem('token');
+  const Token = localStorage.getItem('token');
 
   useEffect(() => {
     fetch(`${API.ORDERS}/cart`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
-        authorization: token,
+        authorization: Token,
       },
     })
       .then(res => res.json())
@@ -71,7 +71,7 @@ export default function Payment() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8',
-          authorization: token,
+          authorization: Token,
         },
         body: JSON.stringify({ payments }),
       })

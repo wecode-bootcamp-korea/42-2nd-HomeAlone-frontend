@@ -7,7 +7,7 @@ import SideBar from './SideBar/SideBar';
 import ProductModal from './ProductModal/ProductModal';
 
 export default function HomeWarming() {
-  const [homeWarmingData, setHomeWramingData] = useState([{}]);
+  const [homeWarmingData, setHomeWramingData] = useState({});
   const [commentData, setCommentData] = useState([{}]);
   const [showPlusBtn, setShowPlusBtn] = useState(false);
   const [showProductModal, setShowProductModal] = useState(false);
@@ -46,7 +46,7 @@ export default function HomeWarming() {
         setHomeWramingData(data.data);
         setUserInfo(data.user);
       });
-  }, []);
+  }, [params.id]);
 
   const handlePlusBtnHover = () => setShowPlusBtn(true);
 
@@ -59,8 +59,10 @@ export default function HomeWarming() {
     setShowProductModal(prev => !prev);
   };
 
-  const pixelRow = homeWarmingData.productInfo?.pixelRow;
-  const pixelColumn = homeWarmingData.productInfo?.pixelColumn;
+  const pixelRow =
+    homeWarmingData.productInfo && homeWarmingData.productInfo[0]?.pixelRow;
+  const pixelColumn =
+    homeWarmingData.productInfo && homeWarmingData.productInfo[0]?.pixelColumn;
 
   return (
     <div>

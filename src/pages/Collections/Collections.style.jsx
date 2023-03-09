@@ -6,6 +6,9 @@ const FontWeight = 'bolder';
 
 export const Main = styled.div`
   ${flex(null, 'center', 'column')}
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 250px;
   padding-top: 140px;
 `;
 

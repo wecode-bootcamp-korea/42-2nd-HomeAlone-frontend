@@ -58,7 +58,7 @@ export default function Comment({ commentData, setCommentData, userInfo }) {
   return (
     <S.CommentWrap>
       <S.Comment>
-        댓글<S.CommentCount>{commentData.length - 1}</S.CommentCount>
+        댓글<S.CommentCount>{commentData.length}</S.CommentCount>
       </S.Comment>
       <S.InputWrap>
         <S.UserImg src={userInfo.profileImage} alt="userimg" />

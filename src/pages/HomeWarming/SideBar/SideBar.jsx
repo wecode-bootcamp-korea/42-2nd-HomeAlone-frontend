@@ -61,7 +61,7 @@ export default function SideBar({ homeWarmingData, commentList, commentData }) {
         )}
         <S.BookMarkCount>{homeWarmingData.scrapCount}</S.BookMarkCount>
         <S.CommentBtn src="/images/HomeWarming/comment.png" alt="commentbtn" />
-        <p>{commentData.length - 1}</p>
+        <p>{commentData.length}</p>
       </S.Button>
     </S.SideButtonWrap>
   );

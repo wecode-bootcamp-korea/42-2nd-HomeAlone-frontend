@@ -1,34 +1,26 @@
 import React, { useEffect, useState } from 'react';
+import { API } from '../../config/config';
 import * as S from './Collections.style';
 
 export default function Collections() {
   const [houseDataList, setHouseDataList] = useState([]);
+  const [userInpo, setuserInpo] = useState({});
 
-  let token = localStorage.getItem('token');
-
-  //TOFIX: mockData 연결 시 동작할 코드
-  // useEffect(() => {
-  //   fetch('/data/houseWarmingList.json', {
-  //     method: 'GET',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setHouseDataList(data.data);
-  //     });
-  // }, []);
+  const TOKEN = localStorage.getItem('token');
 
   // TOFIX: API 연결 시 동작할 코드
   useEffect(() => {
-    fetch(`http://10.58.52.132:8000/scraps/user`, {
+    fetch(`${API.SCRAPS}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
-        authorization: token,
+        authorization: TOKEN,
       },
     })
       .then(res => res.json())
       .then(data => {
-        setHouseDataList(data.data);
+        setHouseDataList(data.collections);
+        setuserInpo(data.user);
       });
   }, []);
 
@@ -38,11 +30,8 @@ export default function Collections() {
         <div>
           <S.Title>스크랩 북</S.Title>
           <S.Profile>
-            <S.ProfileImg
-              src="https://cdn-icons-png.flaticon.com/512/3746/3746927.png"
-              alt="profileImg"
-            />
-            <S.NicKName>hahahoho</S.NicKName>
+            <S.ProfileImg src={userInpo.profileImage} alt="profileImg" />
+            <S.NicKName>{userInpo.nickname}</S.NicKName>
           </S.Profile>
         </div>
         <S.HouseContentsBox>

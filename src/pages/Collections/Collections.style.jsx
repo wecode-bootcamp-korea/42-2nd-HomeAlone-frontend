@@ -27,7 +27,10 @@ export const Profile = styled(Link)`
 `;
 
 export const ProfileImg = styled.img`
-  width: 80px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
 `;
 
 export const NicKName = styled.span`

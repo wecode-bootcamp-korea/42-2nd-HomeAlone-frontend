@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { API } from '../../config/config';
 import * as S from './Main.style';
 
 export default function Main() {
   const [posts, setPosts] = useState([]);
 
-  //TODO: mock 데이터 연결
   useEffect(() => {
-    fetch('/data/posts.json')
+    fetch(`${API.POSTS}`, {
+      method: 'GET',
+    })
       .then(res => res.json())
-      .then(data => setPosts(data));
+      .then(data => setPosts(data.data));
   }, []);
 
   const settings = {

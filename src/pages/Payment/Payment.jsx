@@ -4,16 +4,87 @@ import AddressBox from './components/AddressBox/AddressBox';
 import Sidebar from './components/Sidebar/Sidebar';
 import CartItem from './components/CartItem/CartItem';
 import PaymentOptions from './components/PaymentOptions/PaymentOptions';
+import { API } from '../../config/config';
 import * as S from './Payment.style';
+import { useNavigate } from 'react-router-dom';
 
 export default function Payment() {
   const [carts, setCarts] = useState([]);
+  const [payments, setPayments] = useState({
+    totalProductPrice: 0,
+    totalDeliveryPrice: 0,
+    deliveryName: '',
+    deliveryReceiver: '',
+    deliveryPhoneNumber: '',
+    deliveryAddress: '',
+    deliveryDetailAddress: '',
+    deliveryMessage: '',
+    paymentType: '',
+  });
+
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
-    fetch('/data/carts.json')
+    fetch(`${API.ORDERS}/cart`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        authorization: token,
+      },
+    })
       .then(res => res.json())
-      .then(data => setCarts(data));
+      .then(data => setCarts(data.data));
   }, []);
+
+  const productPrice = carts.reduce(
+    (acc, current) => acc + Number(current.productPriceAmount),
+    0
+  );
+
+  const shippingFee = carts.reduce(
+    (acc, current) => acc + Number(current.shippingFeeAmount),
+    0
+  );
+
+  const totalPrice = productPrice + shippingFee;
+
+  const { paymentType } = payments;
+
+  const changeCurrentPaymentMethod = option => {
+    setPayments({
+      ...payments,
+      paymentType: option,
+      totalProductPrice: productPrice,
+      totalDeliveryPrice: shippingFee,
+    });
+  };
+
+  const isBtnDisabled = paymentType !== '';
+
+  const navigate = useNavigate();
+
+  const onSubmit = e => {
+    e.preventDefault();
+
+    if (payments.totalProductPrice && payments.totalDeliveryPrice) {
+      fetch(`${API.ORDERS}/payment`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+          authorization: token,
+        },
+        body: JSON.stringify({ payments }),
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.message === '결제가 완료됐습니다.') {
+            navigate('/');
+          } else {
+            alert('실패');
+          }
+        });
+    }
+  };
 
   return (
     <S.Payment>
@@ -28,20 +99,7 @@ export default function Payment() {
         <div>
           <S.PaymentBoxTitle>배송지</S.PaymentBoxTitle>
           <S.PaymentSection>
-            {ADDRESS_INFO.map(info => (
-              <AddressBox key={info.id} info={info} />
-            ))}
-            <S.AddressInputBox>
-              <S.PaymentLabel>주소</S.PaymentLabel>
-              <S.AddressBox>
-                <div>
-                  <S.AddressBtn>주소찾기</S.AddressBtn>
-                  <S.PostalCode type="text" />
-                </div>
-                <S.Address type="text" />
-                <S.DetailAddress placeholder="상세주소 입력" />
-              </S.AddressBox>
-            </S.AddressInputBox>
+            <AddressBox payments={payments} setPayments={setPayments} />
           </S.PaymentSection>
         </div>
         <div>
@@ -50,16 +108,21 @@ export default function Payment() {
         </div>
         <div>
           <S.PaymentBoxTitle>결제 수단</S.PaymentBoxTitle>
-          <PaymentOptions />
+          <PaymentOptions
+            payments={payments}
+            actions={{ changeCurrentPaymentMethod }}
+          />
         </div>
       </S.PaymentBox>
-      <Sidebar />
+      <Sidebar
+        productPrice={productPrice}
+        shippingFee={shippingFee}
+        totalPrice={totalPrice}
+        payments={payments}
+        setPayments={setPayments}
+        onSubmit={onSubmit}
+        isBtnDisabled={isBtnDisabled}
+      />
     </S.Payment>
   );
 }
-
-const ADDRESS_INFO = [
-  { id: 1, label: '배송지명' },
-  { id: 2, label: '받는 사람' },
-  { id: 3, label: '연락처' },
-];

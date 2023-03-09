@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components/macro';
 import { flex } from '../../../../styles/mixin';
 import theme from '../../../../styles/theme';
 
@@ -17,11 +17,8 @@ export const OptionBtn = styled.button`
   border-right: 1px solid #eeeeee;
   padding-bottom: 10px;
   cursor: pointer;
-
-  &:focus {
-    background-color: #eefbfe;
-    border: 3px solid ${theme.mainBlue};
-  }
+  border: ${({ isClicked }) => isClicked && css`2px solid #35C5F0`};
+  background-color: ${({ isClicked }) => isClicked && css`#eefbfe`};
 
   img {
     width: 72.5px;

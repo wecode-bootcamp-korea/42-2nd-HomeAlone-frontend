@@ -22,3 +22,12 @@ export const UserInput = styled.input`
   border-radius: 4px;
   outline-color: ${theme.mainBlue};
 `;
+
+export const MessageBox = styled.select`
+  width: 370px;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid ${paymentColor};
+  border-radius: 4px;
+  outline: none;
+`;

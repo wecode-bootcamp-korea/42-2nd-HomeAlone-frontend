@@ -4,19 +4,21 @@ import * as S from './CartItem.style';
 export default function CartItem({ carts }) {
   return (
     <>
-      {carts.map(item => (
-        <S.CartItem key={item.id}>
-          <img src={item.imageUrl} alt="Product Img" />
-          <S.CartInfo>
-            <p>{item.name}</p>
-            <S.PriceInfo>
-              <h1>{item.price}원</h1>
-              <p>|</p>
-              <p>{item.quantity}개</p>
-            </S.PriceInfo>
-          </S.CartInfo>
-        </S.CartItem>
-      ))}
+      {carts.map(
+        ({ id, productImage, productName, productPriceAmount, quantity }) => (
+          <S.CartItem key={id}>
+            <img src={productImage} alt="Product Img" />
+            <S.CartInfo>
+              <p>{productName}</p>
+              <S.PriceInfo>
+                <h1>{Number(productPriceAmount).toLocaleString()}원</h1>
+                <p>|</p>
+                <p>{quantity}개</p>
+              </S.PriceInfo>
+            </S.CartInfo>
+          </S.CartItem>
+        )
+      )}
     </>
   );
 }

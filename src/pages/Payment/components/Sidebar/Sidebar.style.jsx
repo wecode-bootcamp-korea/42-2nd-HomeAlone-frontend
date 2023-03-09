@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import ReactModal from 'react-modal';
 import { flex } from '../../../../styles/mixin';
+import { modalBtn } from '../../../../styles/mixin';
 import theme from '../../../../styles/theme';
 
 export const SidebarBox = styled.div`
@@ -26,13 +27,17 @@ export const Title = styled.h2`
   font-weight: 600;
 `;
 
-export const Price = styled.div`
+export const PriceList = styled.div`
   ${flex('space-between', null, null)}
 `;
 
 export const PriceTitle = styled.p`
   color: gray;
   font-weight: 400;
+`;
+
+export const Price = styled.p`
+  font-weight: 600;
 `;
 
 export const TotalPrice = styled.div`
@@ -60,6 +65,10 @@ export const PaymentBtn = styled.button`
   &:hover {
     filter: brightness(80%);
   }
+
+  &:disabled {
+    background-color: lightgray;
+  }
 `;
 
 export const PaymentModal = styled(ReactModal)`
@@ -81,16 +90,17 @@ export const ModalTitle = styled.p`
   padding-bottom: 20px;
 `;
 
-export const ModalBtn = styled.button`
-  padding: 10px 20px;
-  background-color: ${theme.mainBlue};
-  border-radius: 20px;
-  border-style: none;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
+export const BtnBox = styled.div`
+  display: flex;
+  gap: 15px;
+`;
 
-  &:hover {
-    filter: brightness(80%);
-  }
+export const CloseBtn = styled.button`
+  ${modalBtn}
+  background-color: lightgray;
+`;
+
+export const SubmitBtn = styled.button`
+  ${modalBtn}
+  background-color: ${theme.mainBlue};
 `;

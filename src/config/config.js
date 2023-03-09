@@ -1,5 +1,5 @@
 const BASE_URl_S = 'http://10.58.52.176:8000';
-const BASE_URl_J = 'http://10.58.52.228:8000';
+const BASE_URl_J = 'http://10.58.52.210:8000';
 
 export const API = {
   LOGIN: `${BASE_URl_S}/users/kakaoLogin`,
@@ -7,7 +7,7 @@ export const API = {
   PRODUCTS: `${BASE_URl_J}/products`,
   CARTS: `${BASE_URl_S}/carts`,
   FROMCART: `${BASE_URl_S}/carts?fromCart`,
-  PAYMENTS: `${BASE_URl_J}/payments`,
+  ORDERS: `${BASE_URl_J}/orders`,
   SCRAPS: `${BASE_URl_S}/scraps`,
   COMMENTS: `${BASE_URl_S}/comments`,
   REVIEWS: `${BASE_URl_J}/reviews`,

@@ -3,6 +3,8 @@
 # 🏠 Project 나홀로 집
 
 ## Project 소개 - 1인 가구를 대상으로 한 커뮤니티 중심의 판매 중개 플랫폼
+* 오늘의집을 모티브로 한 커뮤니티&커머스 웹 사이트 프로젝트로 단순히 인테리어 제품을 판매하는 것이 아닌 커뮤니티를 중심으로 기획
+
 ## 깃허브 레파지토리
 
 * <a href="https://github.com/wecode-bootcamp-korea/42-2nd-HomeAlone-frontend"><img src="https://img.shields.io/badge/FrontEnd Repo-181717?style=flat-square&logo=GitHub&logoColor=white&link=https://github.com/wecode-bootcamp-korea/42-2nd-HomeAlone-frontend"/></a>

@@ -5,7 +5,7 @@ import * as S from './FilterModal.Style';
 export default function FilterModal({
   currentMenuId,
   setCurrentMenuId,
-  getFilter,
+  setFilter,
   idx,
 }) {
   const [detailItem, setDetailItem] = useState({
@@ -14,12 +14,13 @@ export default function FilterModal({
 
   useEffect(() => {
     if (!Object.values(detailItem)[0]) return;
-    getFilter(detailItem);
+    setFilter(detailItem);
   }, [detailItem]);
 
   const addItem = e => {
     setDetailItem({ ...detailItem, [e.target.name]: e.target.value });
   };
+
   const navOnMouseLeave = () => {
     setCurrentMenuId();
   };
@@ -34,8 +35,11 @@ export default function FilterModal({
                 category.map(({ id, list }) => (
                   <S.FilterBtnWrap key={id}>
                     <S.FilterBtn
-                      onClick={addItem}
-                      name={FILTER_LIST[idx].title}
+                      onClick={() => {
+                        addItem({
+                          target: { name: FILTER_LIST[idx].title, value: list },
+                        });
+                      }}
                       value={list}
                     >
                       {list}

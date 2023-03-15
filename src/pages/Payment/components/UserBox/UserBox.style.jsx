@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { flex } from '../../../../styles/mixin';
-import theme from '../../../../styles/theme';
 
 const paymentColor = '#a4acb3';
 
@@ -18,7 +17,8 @@ export const UserLabel = styled.div`
 export const UserInput = styled.input`
   width: 270px;
   padding: 10px;
+  background-color: #fafafa;
   border: 1px solid ${paymentColor};
   border-radius: 4px;
-  outline-color: ${theme.mainBlue};
+  outline-style: none;
 `;

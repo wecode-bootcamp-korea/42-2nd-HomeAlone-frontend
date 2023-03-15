@@ -12,11 +12,21 @@ export const Nav = styled.nav`
   background-color: white;
   border-bottom: 1px solid #eeeeee;
   z-index: 5;
+
+  @media screen and (max-width: 770px) {
+    ${flex('center', 'center', null)}
+  }
 `;
 
 export const MenuBox = styled.div`
   ${flex('space-around', 'center', null)}
   gap: 20px;
+`;
+
+export const Menu = styled.div`
+  @media screen and (max-width: 770px) {
+    display: none;
+  }
 `;
 
 export const Logo = styled.img`
@@ -40,6 +50,10 @@ export const MenuBtn = styled.button`
 export const IconBox = styled.div`
   ${flex('space-around', 'center', null)}
   gap: 20px;
+
+  @media screen and (max-width: 770px) {
+    display: none;
+  }
 `;
 
 export const MemberBox = styled.div`

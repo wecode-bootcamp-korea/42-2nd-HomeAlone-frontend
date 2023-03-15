@@ -33,7 +33,7 @@ export default function Posting() {
 
   const { title, description, img } = uploadInfo;
 
-  const token = localStorage.getItem('token');
+  const Token = localStorage.getItem('token');
   const navigate = useNavigate();
 
   const handleImg = e => {
@@ -93,14 +93,13 @@ export default function Posting() {
       method: 'POST',
       headers: {
         enctype: 'multipart/form-data',
-        authorization: token,
+        authorization: Token,
       },
       body: uploadForm,
     })
       .then(response => response.json())
       .then(data => {
         if (data.message === 'success') {
-          alert('성공');
           navigate('/home-warming-list');
         } else {
           alert('실패');

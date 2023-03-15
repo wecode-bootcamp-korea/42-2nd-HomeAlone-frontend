@@ -2,16 +2,27 @@ import styled from 'styled-components';
 import { flex } from '../../../styles/mixin';
 
 export const ReviewTitleWrap = styled.div`
-  ${flex('flex-start', 'center', null)}
+  ${flex('space-between', 'center', null)}
   margin-top: 20px;
   margin-bottom: 20px;
   border-bottom: solid 1px #dbdbdb;
   padding-bottom: 10px;
 `;
 
+export const ReviewCount = styled.div`
+  ${flex('flex-start', 'center', null)}
+`;
+
 export const Title = styled.p`
   margin-right: 10px;
   font-size: 20px;
+  margin-right: 10px;
+`;
+
+export const CountReview = styled.p`
+  color: #009fcd;
+  font-size: 20px;
+  font-weight: 700;
 `;
 
 export const WriteReview = styled.button`
@@ -44,59 +55,16 @@ export const Recent = styled.p`
   cursor: pointer;
 `;
 
-export const Average = styled.p`
+export const AverageTitle = styled.p`
   margin-right: 5px;
   color: #757575;
+`;
+
+export const Average = styled.p`
+  color: #009fcd;
 `;
 
 export const ReviewDetail = styled.div`
-  border-bottom: solid 1px #dbdbdb;
   margin-bottom: 20px;
   padding-bottom: 20px;
-`;
-
-export const UserInfo = styled.div`
-  ${flex(null, 'center', null)}
-  margin-bottom: 20px;
-`;
-
-export const UserImg = styled.img`
-  width: 20px;
-  height: 20px;
-  border-radius: 70%;
-  overflow: hidden;
-  margin-right: 5px;
-`;
-
-export const UserName = styled.p`
-  margin-right: 5px;
-`;
-
-export const ProductName = styled.p`
-  margin-bottom: 10px;
-  color: #757575;
-`;
-
-export const ProductImg = styled.img`
-  width: 200px;
-  height: 200px;
-  border-radius: 4px;
-  margin-bottom: 10px;
-`;
-
-export const ReviewText = styled.p`
-  line-height: 1.5;
-  margin-bottom: 20px;
-`;
-
-export const SuggestionBtn = styled.button`
-  background-color: white;
-  width: 114px;
-  height: 32px;
-  border-radius: 4px;
-  border: 1px solid #35c5f0;
-  color: #35c5f0;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
 `;

@@ -8,6 +8,7 @@ export const AllWarp = styled.div`
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.8);
+  z-index: 6;
 `;
 
 export const ModalWrap = styled.div`
@@ -15,7 +16,7 @@ export const ModalWrap = styled.div`
   top: 50%;
   left: 50%;
   width: 40%;
-  height: 95%;
+  height: 85%;
   padding: 20px;
   transform: translate(-50%, -50%);
   border: solid #e6e6e6 2px;
@@ -88,10 +89,14 @@ export const Picture = styled.img`
   width: 100px;
   height: 100px;
   border-radius: 5px;
+  border: solid 1px white;
   margin-bottom: 10px;
 `;
 
-export const AddpictureBtn = styled.button`
+export const AddpictureBtn = styled.label`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 40px;
   border-radius: 4px;
@@ -100,6 +105,10 @@ export const AddpictureBtn = styled.button`
   background-color: white;
   font-size: 15px;
   cursor: pointer;
+`;
+
+export const ImgUpload = styled.input`
+  display: none;
 `;
 
 export const ReviewTextWrap = styled(EvaluationWrap)`

@@ -9,6 +9,10 @@ export const SearchInput = styled.input`
   border-radius: 4px;
   outline: none;
 
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+
   &::placeholder {
     color: #dadde0;
     font-size: 15px;

@@ -1,9 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import API from '../../../config/config';
 import * as S from './ProductInfo.Style';
 
-export default function ProductInfo() {
-  const [productInfo, setProductInfo] = useState([{}]);
+export default function ProductInfo({ productDetail }) {
   const [quantity, setQuantity] = useState(1);
+
+  const navigate = useNavigate();
 
   const plusBtn = () => {
     setQuantity(quantity + 1);
@@ -14,35 +17,70 @@ export default function ProductInfo() {
     setQuantity(prev => prev - 1);
   };
 
-  useEffect(() => {
-    fetch('/data/productsDetail.json')
-      .then(res => res.json())
-      .then(data => setProductInfo(data));
-  }, []);
+  const cartBtnClick = () => {
+    fetch(`${API.CARTS}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: localStorage.getItem('token'),
+      },
+      body: JSON.stringify({
+        data: { productId: productDetail.productId, quantity: quantity },
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (localStorage.getItem('token') !== 'undefined') {
+          navigate('/cart');
+        } else {
+          alert('로그인이 필요합니다.');
+          navigate('/login');
+        }
+      });
+  };
 
   return (
     <S.ProductInfoWrap>
-      <S.ProductName>{productInfo[0].name}</S.ProductName>
-      <S.Review>리뷰개수</S.Review>
-      <S.Discount>할인가{productInfo[0].discount}</S.Discount>
-      <S.Price>{productInfo[0].price}</S.Price>
+      <S.ProductName>{productDetail.productName}</S.ProductName>
+      <S.Review>{productDetail.ratingAmount}개 리뷰</S.Review>
+      <S.DiscountWrap>
+        <S.productPrice>
+          {Number(productDetail.productPrice).toLocaleString('ko-KR')}원
+        </S.productPrice>
+        <S.Discount>
+          {Number(productDetail.discountPercentage).toLocaleString('ko-KR')}%
+        </S.Discount>
+      </S.DiscountWrap>
+      <S.Price>
+        {Number(productDetail.finalPrice).toLocaleString('ko-KR')}원
+      </S.Price>
       <S.DeliveryWrap>
         <S.DeliveryTitle>배송비</S.DeliveryTitle>
-        <p>{productInfo[0].shippingFee}원</p>
+        <p>
+          {Number(productDetail.productShippingFee).toLocaleString('ko-KR')}원
+        </p>
       </S.DeliveryWrap>
-      <S.ExplainProduct>{productInfo[0].description}</S.ExplainProduct>
       <S.OptionWrap>
-        <S.Name>{productInfo[0].name}</S.Name>
+        <S.ExplainTitle>상품설명</S.ExplainTitle>
+        <S.ExplainProduct>{productDetail.productDescription}</S.ExplainProduct>
         <S.QuantityWrap>
           <S.QuantityHandle>
-            <S.QuantityMinus onClick={minusBtn} src="images/detail/minus.png" />
+            <S.QuantityMinus
+              onClick={minusBtn}
+              src="/images/Detail/minus.png"
+            />
             <S.Quantity>{quantity}</S.Quantity>
-            <S.QuantityPlus onClick={plusBtn} src="images/detail/plus.png" />
+            <S.QuantityPlus onClick={plusBtn} src="/images/Detail/plus.png" />
           </S.QuantityHandle>
-          <S.TotalPrice>{productInfo[0].price * quantity}</S.TotalPrice>
+          <S.TotalPrice>
+            {Number(productDetail.finalPrice * quantity).toLocaleString(
+              'ko-KR'
+            )}
+            원
+          </S.TotalPrice>
         </S.QuantityWrap>
       </S.OptionWrap>
-      <S.CartBtn>장바구니</S.CartBtn>
+      <S.CartBtn onClick={cartBtnClick}>장바구니</S.CartBtn>
     </S.ProductInfoWrap>
   );
 }

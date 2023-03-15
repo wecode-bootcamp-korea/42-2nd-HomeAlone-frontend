@@ -30,3 +30,16 @@ export const carouselBtn = css`
     background-color: #eeeeee;
   }
 `;
+
+export const modalBtn = css`
+  padding: 10px 20px;
+  border-radius: 20px;
+  border-style: none;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(80%);
+  }
+`;

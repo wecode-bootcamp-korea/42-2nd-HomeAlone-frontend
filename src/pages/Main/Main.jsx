@@ -24,6 +24,8 @@ export default function Main() {
     nextArrow: <NextBtn />,
   };
 
+  console.log(posts);
+
   return (
     <S.Main>
       <S.ToHomeWarming to="/home-warming/1">
